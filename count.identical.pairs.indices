@@ -1,0 +1,27 @@
+we are asked to write a function that given a zero-indexed array A of N integers,
+returns the number of identical pairs of indices.
+
+A[0]=3
+A[1]=5
+A[2]=6
+A[3]=3
+A[4]=3
+A[5]=5
+
+indices(P,Q)   if 0<=p<Q<N   A[P]=A[Q]
+so above array A should return 4
+
+function indentical(A){
+     var i,j,indenticalPairs;
+     A.sort();
+     for(i=0;i<A.length-1;i++){
+         for(j=i+1;j<A.length;j++){
+              if(A[i]==A[j]){
+              indenticalPairs++;
+              }else{
+                  break;
+              }
+         }
+     }
+     return indenticalPairs;
+}
